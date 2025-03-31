@@ -3,136 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhil M - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <title>Akhil M - 90s Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
         body {
-            background-color: #0d0d0d;
-            color: #fff;
-            overflow-x: hidden;
-        }
-        header {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            background: linear-gradient(to bottom, #111, #222);
-        }
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid #fff;
-        }
-        h1 {
-            font-size: 4rem;
-            font-weight: bold;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #ccc;
-        }
-        section {
-            padding: 80px 10%;
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
             text-align: center;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .grid div {
-            background: #222;
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 3px dashed #ff0;
             padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            background-color: #111;
         }
-        .grid div:hover {
-            transform: scale(1.05);
+        h1, h2 {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            border: 2px solid #00ff00;
+            padding: 10px;
+        }
+        .blink {
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        /* Timeline styles */
+        .timeline {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #222;
+            color: #00ff00;
+            border-radius: 8px;
+        }
+        .timeline-entry {
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 3px solid #ff0;
+            position: relative;
+        }
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: #ff0;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        .timeline-entry h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .timeline-entry p {
+            margin: 5px 0;
+        }
+        .timeline-entry span {
+            display: block;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="profile.jpg" alt="Akhil M" class="profile-image">
-        <h1 id="hero-title">Akhil M</h1>
-        <h2 id="hero-subtitle">Data Engineer | Cloud & Big Data Expert</h2>
-        <p>Passionate about transforming raw data into actionable insights. Experienced in designing and optimizing cloud-based data solutions.</p>
-    </header>
-    
-    <section id="skills">
+    <div class="container">
+        <h1 class="blink">Welcome to Akhil Reddy M's Portfolio</h1>
+        <img src="profile.png" width="150" height="150" alt="Akhil M">
+        <h2>Data Engineer | Cloud & Big Data Expert</h2>
+        <p>Data Engineer with 4+ years of expertise in crafting cloud-based data analytics solutions. Successfully deployed enter- prise-scale data lakes on Azure, optimizing ETL pipelines and query performance. Proficient in data warehousing, modeling, and API development to deliver real-time insights and robust reporting across cloud platforms. </p>
+
         <h2>Skills</h2>
-        <div class="grid">
-            <div>Python</div>
-            <div>Azure & GCP</div>
-            <div>SQL & BigQuery</div>
-            <div>ETL Pipelines</div>
-            <div>Power BI & Data Visualization</div>
-        </div>
-    </section>
-    
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="grid">
-            <div>
-                <h3>MetLife</h3>
-                <p>Data Engineer (May 2022 - Mar 2024)</p>
-                <p>Implemented Azure-based data lakes and optimized ETL pipelines...</p>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Skills</th>
+            </tr>
+            <tr>
+                <td>Cloud & Big Data</td>
+                <td>Azure (Data Lake, Synapse, ADF, Databricks), GCP (BigQuery, Dataproc), AWS (S3, Redshift, Lambda, EMR, Athena)</td>
+            </tr>
+            <tr>
+                <td>Data Engineering & ETL</td>
+                <td>PySpark, Airflow, SQL, PostgreSQL, Snowflake, MongoDB, Data Warehousing, Schema Evolution</td>
+            </tr>
+            <tr>
+                <td>Programming</td>
+                <td>Python, SQL, Shell Scripting</td>
+            </tr>
+            <tr>
+                <td>Development Tools</td>
+                <td>Hadoop (HDFS, Hive, MapReduce), Spark, Terraform, Jenkins, Docker</td>
+            </tr>
+            <tr>
+                <td>Data Visualization</td>
+                <td>Power BI, Tableau, Advanced SQL Optimization, Real-time BI Reporting</td>
+            </tr>
+            <tr>
+                <td>Security & Governance</td>
+                <td>RBAC, Managed Identities, Key Vault, Data Compliance</td>
+            </tr>
+        </table>
+
+
+        <!-- Timeline Section -->
+        <section class="timeline">
+            <h2>Work Experience</h2>
+
+            <div class="timeline-entry"> 
+                <h3>MetLife <span class="blink">[May 2022 - Mar 2024]</span></h3>
+                <span>Data Engineer - Hyderabad, India</span>
+                
+            <ul>
+                <li>Engineered an enterprise-scale data lake using Azure Data Lake Storage and Azure Synapse Analytics, enabling centralized data storage and detailed analytical processing with emphasis on data warehousing and cloud data analytics.</li>
+                <li>Migrated legacy on-premise data systems to Azure Cloud, reducing infrastructure maintenance overhead and supporting ongoing technical tool optimization.</li>
+                <li>Enhanced Azure Synapse query performance through indexing, materialized views, and caching techniques, ensuring precise data validation and organized reporting.</li>
+                <li>Optimized ETL pipelines using Azure Data Factory and PySpark on Azure Databricks, meticulously documenting extraction, cleaning, and validation processes for reliable data processing. </li>
+                <li>Developed schema evolution strategies for handling structured and semi-structured data with Azure Data Explorer and Kusto Query Language, aligning with data modeling best practices. </li>
+                <li>Automated infrastructure deployment by implementing CI/CD pipelines with Azure DevOps and Terraform, providing proactive technical support and optimization for internal applications. </li>
+                <li>Integrated Azure Monitor, Log Analytics, and Application Insights to enable real-time monitoring, alerting, and performance tuning of data pipelines for effective documentation.</li>
+            </ul>
             </div>
-            <div>
-                <h3>Providence Global Centre</h3>
-                <p>Data Engineer (Sep 2021 - Apr 2022)</p>
-                <p>Architected data architectures using GCP services like BigQuery and Dataproc...</p>
+
+            <div class="timeline-entry"> 
+                <h3>Providence Global Centre <span class="blink">[Sep 2021 - Mar 2022]</span></h3>
+                <span>Data Engineer - Hyderabad, India</span>
+                
+            <ul>
+                <li>Architected robust data architectures using GCP services such as BigQuery, Google Cloud Storage, and Google Cloud Dataproc, enhancing data warehousing and analysis while maintaining detailed documentation</li>
+                <li>Migrated an on-prem Hadoop system to GCP using containerization techniques and client libraries, enhancing system scalability and data reliability. </li>
+                <li>Streamlined data workflows with GCP Dataproc, Cloud Functions, and BigQuery to efficiently extract, clean, and transform data, supporting critical data processing tasks. </li>
+                <li>Optimized multi-cloud data management processes by integrating Data Lake Analytics, SQL Database, Synapse, Databricks, and GCP components, contributing to improved organizational processes</li>
+                <li>Refined SQL queries and data processing tasks to bolster performance, ensuring accurate data validation and facilitating the generation of analytical reports. </li>
+                <li>Evaluated data workflows using PySpark and Hive based on ETL mappings, ensuring precise data validation for comprehensive analytical conclusions. </li>
+                <li>Augmented data processing and technical support by leveraging multi-cloud services, including AWS and GCP components, thereby improving data-driven communication strategies. </li>
+            </ul>
             </div>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid">
-            <div>
-                <h3>Election Data Analysis</h3>
-                <p>Developed a Python-based scraper to analyze election contestant data...</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact">
+        </section>
+
+
+
         <h2>Contact Me</h2>
         <p>Email: akhilreddy.m12@gmail.com</p>
         <p>LinkedIn: linkedin.com/in/akhilm</p>
-    </section>
-    
-    <script>
-        gsap.from("#hero-title", { duration: 1.2, y: -50, opacity: 0, ease: "power4.out" });
-        gsap.from("#hero-subtitle", { duration: 1.4, y: 50, opacity: 0, delay: 0.3, ease: "power4.out" });
-        gsap.from(".profile-image", { duration: 1.2, scale: 0, opacity: 0, ease: "elastic.out(1, 0.5)" });
-        
-        gsap.utils.toArray("section").forEach(section => {
-            gsap.from(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                opacity: 0,
-                y: 50,
-                duration: 1.2,
-                ease: "power4.out"
-            });
-        });
-    </script>
+
+    </div>
 </body>
 </html>
