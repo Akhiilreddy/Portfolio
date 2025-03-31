@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil M - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(to bottom, #111, #222);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #fff;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .grid div {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .grid div:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="profile.jpg" alt="Akhil M" class="profile-image">
+        <h1 id="hero-title">Akhil M</h1>
+        <h2 id="hero-subtitle">Data Engineer | Cloud & Big Data Expert</h2>
+        <p>Passionate about transforming raw data into actionable insights. Experienced in designing and optimizing cloud-based data solutions.</p>
+    </header>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="grid">
+            <div>Python</div>
+            <div>Azure & GCP</div>
+            <div>SQL & BigQuery</div>
+            <div>ETL Pipelines</div>
+            <div>Power BI & Data Visualization</div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="grid">
+            <div>
+                <h3>MetLife</h3>
+                <p>Data Engineer (May 2022 - Mar 2024)</p>
+                <p>Implemented Azure-based data lakes and optimized ETL pipelines...</p>
+            </div>
+            <div>
+                <h3>Providence Global Centre</h3>
+                <p>Data Engineer (Sep 2021 - Apr 2022)</p>
+                <p>Architected data architectures using GCP services like BigQuery and Dataproc...</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div>
+                <h3>Election Data Analysis</h3>
+                <p>Developed a Python-based scraper to analyze election contestant data...</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: akhilreddy.m12@gmail.com</p>
+        <p>LinkedIn: linkedin.com/in/akhilm</p>
+    </section>
+    
+    <script>
+        gsap.from("#hero-title", { duration: 1.2, y: -50, opacity: 0, ease: "power4.out" });
+        gsap.from("#hero-subtitle", { duration: 1.4, y: 50, opacity: 0, delay: 0.3, ease: "power4.out" });
+        gsap.from(".profile-image", { duration: 1.2, scale: 0, opacity: 0, ease: "elastic.out(1, 0.5)" });
+        
+        gsap.utils.toArray("section").forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>
